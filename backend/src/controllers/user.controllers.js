@@ -1,6 +1,6 @@
 import { User } from '../models/user.model.js';
-import { ApiError } from '../utils/apiError.js';
-import { ApiResponse } from '../utils/apiResponse.js';
+import { ApiError } from '../utils/ApiError.js';
+import { ApiResponse } from '../utils/ApiResponse.js';
 import asyncHandler from "../utils/asyncHandler.js";
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
@@ -263,4 +263,14 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
             "Account details updated successfully"
         )
     );
-});
+})
+
+export {
+    generateAccessAndRefreshToken,
+    registerUser,
+    loginUser,
+    logoutUser,
+    changeCurrentUserPassword,
+    getCurrentUser,
+    updateAccountDetails
+}
